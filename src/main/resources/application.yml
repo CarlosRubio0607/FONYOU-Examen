@@ -1,0 +1,4 @@
+server:
+  servlet:
+    contextPath: /test/v1
+  port: 8080
