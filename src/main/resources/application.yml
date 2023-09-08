@@ -1,6 +1,6 @@
 server:
   servlet:
-    contextPath: /test/v1
+    contextPath: /msRegistro-core/v1
   port: 8080
   
 spring:
@@ -11,7 +11,7 @@ spring:
     serialization:
       fail-on-empty-beans: false
   datasource:
-    url: jdbc:mysql://127.0.0.1:3307/escueladb
+    url: jdbc:mysql://127.0.0.1:3307/escueladb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: owner
     password: password
     driverClassName: com.mysql.jdbc.Driver
@@ -24,7 +24,6 @@ spring:
       ddl-auto: none
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    database-platform: org.hibernate.dialect.MariaDB103Dialect
 
   config:
     activate:
