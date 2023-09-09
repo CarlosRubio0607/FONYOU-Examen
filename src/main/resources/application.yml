@@ -1,7 +1,7 @@
 server:
   servlet:
     contextPath: /msRegistro-core/v1
-  port: 8080
+  port: 9092
   
 spring:
   jackson:

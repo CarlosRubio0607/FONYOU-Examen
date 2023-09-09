@@ -34,7 +34,7 @@ public class CatalogoServiceImpl implements CatalogoService{
 			logger.info("CatalogosService getCatalogoCiudad");
 			List<EsccCiudad> listEnt = esccCiudadRepository.findAll();
 			list = CiudadMapper.toLstDto(listEnt);
-			if (listEnt.isEmpty()) {
+			if (list.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}
 		} catch (Exception e) {
