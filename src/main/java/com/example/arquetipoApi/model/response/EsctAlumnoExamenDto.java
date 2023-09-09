@@ -1,149 +1,101 @@
-package com.example.arquetipoApi.persistence.entity;
+package com.example.arquetipoApi.model.response;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.example.arquetipoApi.persistence.entity.EsctAlumno;
+import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamenResp;
+import com.example.arquetipoApi.persistence.entity.EsctExamen;
 
+import lombok.Data;
 
-@Entity
-@Table(name = "esct_alumno_examen")
-public class EsctAlumnoExamen {
+@Data
+public class EsctAlumnoExamenDto implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name = "CVE_ALUMNO_EXAMEN", nullable = false, updatable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cveAlumnoExamen;
-
-    @Column(name = "CALIFICACION", nullable = false, precision = 3, scale = 1)
-    private BigDecimal calificacion;
-
-    @Column(name = "FEC_ALTA", nullable = false)
-    private Date fecAlta;
-
-    @Column(name = "FEC_BAJA")
-    private Date fecBaja;
-
-    @Column(name = "FEC_MODIFICA")
-    private Date fecModifica;
-
-    @Column(name = "CVE_USUARIO_ALTA", nullable = false, length = 60)
-    private String cveUsuarioAlta;
-
-    @Column(name = "CVE_USUARIO_BAJA", length = 60)
-    private String cveUsuarioBaja;
-
-    @Column(name = "CVE_USUARIO_MODIFICA", length = 60)
-    private String cveUsuarioModifica;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_alumno", nullable = false)
-    private EsctAlumno cveAlumno;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_examen", nullable = false)
-    private EsctExamen cveExamen;
-
-    @OneToMany(mappedBy = "cveAlumnoExamen")
-    private ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps;
-
+	private Integer cveAlumnoExamen;
+	private BigDecimal calificacion;
+	private Date fecAlta;
+	private Date fecBaja;
+	private Date fecModifica;
+	private String cveUsuarioAlta;
+	private String cveUsuarioBaja;
+	private String cveUsuarioModifica;
+	private EsctAlumno cveAlumno;
+	private EsctExamen cveExamen;
+	private ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps;
 	public Integer getCveAlumnoExamen() {
 		return cveAlumnoExamen;
 	}
-
 	public void setCveAlumnoExamen(Integer cveAlumnoExamen) {
 		this.cveAlumnoExamen = cveAlumnoExamen;
 	}
-
 	public BigDecimal getCalificacion() {
 		return calificacion;
 	}
-
 	public void setCalificacion(BigDecimal calificacion) {
 		this.calificacion = calificacion;
 	}
-
 	public Date getFecAlta() {
 		return fecAlta;
 	}
-
 	public void setFecAlta(Date fecAlta) {
 		this.fecAlta = fecAlta;
 	}
-
 	public Date getFecBaja() {
 		return fecBaja;
 	}
-
 	public void setFecBaja(Date fecBaja) {
 		this.fecBaja = fecBaja;
 	}
-
 	public Date getFecModifica() {
 		return fecModifica;
 	}
-
 	public void setFecModifica(Date fecModifica) {
 		this.fecModifica = fecModifica;
 	}
-
 	public String getCveUsuarioAlta() {
 		return cveUsuarioAlta;
 	}
-
 	public void setCveUsuarioAlta(String cveUsuarioAlta) {
 		this.cveUsuarioAlta = cveUsuarioAlta;
 	}
-
 	public String getCveUsuarioBaja() {
 		return cveUsuarioBaja;
 	}
-
 	public void setCveUsuarioBaja(String cveUsuarioBaja) {
 		this.cveUsuarioBaja = cveUsuarioBaja;
 	}
-
 	public String getCveUsuarioModifica() {
 		return cveUsuarioModifica;
 	}
-
 	public void setCveUsuarioModifica(String cveUsuarioModifica) {
 		this.cveUsuarioModifica = cveUsuarioModifica;
 	}
-
 	public EsctAlumno getCveAlumno() {
 		return cveAlumno;
 	}
-
 	public void setCveAlumno(EsctAlumno cveAlumno) {
 		this.cveAlumno = cveAlumno;
 	}
-
 	public EsctExamen getCveExamen() {
 		return cveExamen;
 	}
-
 	public void setCveExamen(EsctExamen cveExamen) {
 		this.cveExamen = cveExamen;
 	}
-
 	public ArrayList<EsctAlumnoExamenResp> getCveAlumnoExamenEsctAlumnoExamenResps() {
 		return cveAlumnoExamenEsctAlumnoExamenResps;
 	}
-
 	public void setCveAlumnoExamenEsctAlumnoExamenResps(
 			ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps) {
 		this.cveAlumnoExamenEsctAlumnoExamenResps = cveAlumnoExamenEsctAlumnoExamenResps;
 	}
+
 }
