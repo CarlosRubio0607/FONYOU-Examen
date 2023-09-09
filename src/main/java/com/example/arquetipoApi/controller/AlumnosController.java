@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.arquetipoApi.Service.AlumnosService;
-import com.example.arquetipoApi.model.response.EsctExamenDto;
+import com.example.arquetipoApi.model.response.EsctAlumnoDto;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -31,7 +31,7 @@ public class AlumnosController {
 	}
 	
 	@PostMapping("/saveAlumnos")
-	public ResponseEntity<?> save(@RequestBody EsctExamenDto examen) {
+	public ResponseEntity<?> save(@RequestBody EsctAlumnoDto examen) {
 		return AlumnosService.saveAlumnos(examen);
 
 	}
