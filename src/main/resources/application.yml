@@ -10,6 +10,8 @@ spring:
     locale: es_MX    
     serialization:
       fail-on-empty-beans: false
+    mapper: 
+      SORT_PROPERTIES_ALPHABETICALLY: true
   datasource:
     url: jdbc:mysql://127.0.0.1:3307/escueladb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: owner

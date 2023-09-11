@@ -17,7 +17,7 @@ public class TestController {
 	@RequestMapping(value ="/test", method = RequestMethod.GET)
 	@ResponseBody
 	public String registro() {
-		logger.info("::::::::::: Registro de :::::::::::");
+		logger.info("::::::::::: Test de Hola mundo..!!! :::::::::::");
 		return "Hola mundo...!!!";
 	}
 }

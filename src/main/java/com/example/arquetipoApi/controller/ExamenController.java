@@ -18,7 +18,7 @@ import com.example.arquetipoApi.model.response.EsctExamenDto;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ExamenController {
 	
-	private final static Logger logger = LoggerFactory.getLogger(TestController.class);
+	private final static Logger logger = LoggerFactory.getLogger(ExamenController.class);
 
 	@Autowired
 	private ExamenService examenService;

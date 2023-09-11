@@ -4,6 +4,8 @@ import java.time.OffsetDateTime;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,7 +49,8 @@ public class EsctExamen {
     @Column(name = "CVE_USUARIO_MODIFICA", length = 60)
     private String cveUsuarioModifica;
 
-    @OneToMany(mappedBy = "cveExamen", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "cveExamen", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<EsctExamenPregunta> cveExamenEsctExamenPreguntas;
 
 	public Integer getCveExamen() {

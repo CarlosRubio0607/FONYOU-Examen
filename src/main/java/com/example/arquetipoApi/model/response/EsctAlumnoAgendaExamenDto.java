@@ -6,9 +6,13 @@ import java.util.Date;
 import com.example.arquetipoApi.persistence.entity.EsctAlumno;
 import com.example.arquetipoApi.persistence.entity.EsctExamen;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class EsctAlumnoAgendaExamenDto implements Serializable{
 
 	/**
@@ -24,8 +28,9 @@ public class EsctAlumnoAgendaExamenDto implements Serializable{
 	private String cveUsuarioAlta;
 	private String cveUsuarioBaja;
 	private String cveUsuarioModifica;
-	private EsctAlumno cveAlumno;
-	private EsctExamen cveExamen;
+	private EsctAlumnoDto cveAlumno;
+	private EsctExamenDto cveExamen;
+	
 	public Integer getCveAlumnoAgenda() {
 		return cveAlumnoAgenda;
 	}
@@ -74,16 +79,16 @@ public class EsctAlumnoAgendaExamenDto implements Serializable{
 	public void setCveUsuarioModifica(String cveUsuarioModifica) {
 		this.cveUsuarioModifica = cveUsuarioModifica;
 	}
-	public EsctAlumno getCveAlumno() {
+	public EsctAlumnoDto getCveAlumno() {
 		return cveAlumno;
 	}
-	public void setCveAlumno(EsctAlumno cveAlumno) {
+	public void setCveAlumno(EsctAlumnoDto cveAlumno) {
 		this.cveAlumno = cveAlumno;
 	}
-	public EsctExamen getCveExamen() {
+	public EsctExamenDto getCveExamen() {
 		return cveExamen;
 	}
-	public void setCveExamen(EsctExamen cveExamen) {
+	public void setCveExamen(EsctExamenDto cveExamen) {
 		this.cveExamen = cveExamen;
 	}
 	

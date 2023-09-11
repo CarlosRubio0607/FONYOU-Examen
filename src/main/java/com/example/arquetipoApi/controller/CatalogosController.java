@@ -15,7 +15,7 @@ import com.example.arquetipoApi.Service.CatalogoService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CatalogosController {
 	
-	private final static Logger logger = LoggerFactory.getLogger(TestController.class);
+	private final static Logger logger = LoggerFactory.getLogger(CatalogosController.class);
 
 	@Autowired
 	private CatalogoService catalogoService;

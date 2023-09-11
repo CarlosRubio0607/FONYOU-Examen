@@ -60,7 +60,7 @@ public class EsctExamenPregunta {
     @Column(name = "CVE_USUARIO_MODIFICA", length = 60)
     private String cveUsuarioModifica;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.MERGE)
+    @ManyToOne
     @JoinColumn(name = "cve_examen", nullable = false)
     private EsctExamen cveExamen;
 

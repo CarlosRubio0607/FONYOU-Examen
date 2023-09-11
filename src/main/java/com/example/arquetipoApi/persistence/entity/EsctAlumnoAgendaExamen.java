@@ -44,11 +44,11 @@ public class EsctAlumnoAgendaExamen {
     private String cveUsuarioModifica;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_alumno", nullable = false)
+    @JoinColumn(name = "CVE_ALUMNO", referencedColumnName = "CVE_ALUMNO")
     private EsctAlumno cveAlumno;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_examen", nullable = false)
+    @JoinColumn(name = "CVE_EXAMEN", referencedColumnName = "CVE_EXAMEN")
     private EsctExamen cveExamen;
 
 	public Integer getCveAlumnoAgenda() {

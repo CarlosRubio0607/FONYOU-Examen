@@ -27,7 +27,6 @@ public class EsctExamenPreguntaDto implements Serializable{
 	private String cveUsuarioAlta;
 	private String cveUsuarioBaja;
 	private String cveUsuarioModifica;
-	private EsctExamenDto cveExamen;
 	
 	public Integer getCvePregunta() {
 		return cvePregunta;
@@ -106,12 +105,6 @@ public class EsctExamenPreguntaDto implements Serializable{
 	}
 	public void setCveUsuarioModifica(String cveUsuarioModifica) {
 		this.cveUsuarioModifica = cveUsuarioModifica;
-	}
-	public EsctExamenDto getCveExamen() {
-		return cveExamen;
-	}
-	public void setCveExamen(EsctExamenDto cveExamen) {
-		this.cveExamen = cveExamen;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;

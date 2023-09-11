@@ -11,28 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.arquetipoApi.Service.AlumnosService;
-import com.example.arquetipoApi.model.response.EsctAlumnoDto;
+import com.example.arquetipoApi.Service.AgendaService;
+import com.example.arquetipoApi.model.response.EsctAlumnoAgendaExamenDto;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-public class AlumnosController {
+public class AgendaController {
 	
-	private final static Logger logger = LoggerFactory.getLogger(AlumnosController.class);
+	private final static Logger logger = LoggerFactory.getLogger(AgendaController.class);
 
 	@Autowired
-	private  AlumnosService AlumnosService;
+	private  AgendaService agendaService;
 
-	@GetMapping("/getCatalogoAlumnos")
+	@GetMapping("/getCatalogoAgenda")
 	@ResponseBody
 	public ResponseEntity<?> registro() {
-		logger.info("::::::::::: Get de catalogos de examenes :::::::::::");
-		return AlumnosService.getCatalogoAlumnos();
+		logger.info("::::::::::: Get de catalogos de Agenda :::::::::::");
+		return agendaService.getCatalogoAgenda();
 	}
 	
-	@PostMapping("/saveAlumnos")
-	public ResponseEntity<?> save(@RequestBody EsctAlumnoDto examen) {
-		return AlumnosService.saveAlumnos(examen);
+	@PostMapping("/saveAgenda")
+	public ResponseEntity<?> save(@RequestBody EsctAlumnoAgendaExamenDto examen) {
+		logger.info("::::::::::: Save de Agenda :::::::::::");
+		return agendaService.saveAgenda(examen);
 
 	}
 }
