@@ -53,8 +53,8 @@ public class AgendaServiceImpl implements AgendaService{
 		List<EsctAlumnoAgendaExamen> listEnt = null;
 		try {
 			logger.info("AgendaServiceImpl ");
-			listEnt = esctAlumnoAgendaExamenRepository.getAllAgendas();
-//			listEnt = esctAlumnoAgendaExamenRepository.findAll();
+//			listEnt = esctAlumnoAgendaExamenRepository.getAllAgendas();
+			listEnt = esctAlumnoAgendaExamenRepository.findAll();
 			list = agendaMapper.toLstDto(listEnt);
 			if (list.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -77,7 +77,6 @@ public class AgendaServiceImpl implements AgendaService{
 			
 			alumnoAgenda = ObjectMapperUtils.map(agenda, EsctAlumnoAgendaExamen.class);
 			alumnoAgenda.setFecAlta(new Date());
-			
 				
 			alumnoAgenda.setFecExamenAplicacion(calculaFechaByZonaHoraria(agenda));
 			

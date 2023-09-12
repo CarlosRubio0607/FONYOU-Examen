@@ -2,9 +2,10 @@ package com.example.arquetipoApi.persistence.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,7 +24,7 @@ public class EsctAlumnoExamenResp {
     private Integer cveAlumnoRespuesta;
 
     @Column(name = "RESPUESTA", nullable = false)
-    private Integer respuesta;
+    private String respuesta;
 
     @Column(name = "FEC_ALTA", nullable = false)
     private Date fecAlta;
@@ -43,13 +44,15 @@ public class EsctAlumnoExamenResp {
     @Column(name = "CVE_USUARIO_MODIFICA", length = 60)
     private String cveUsuarioModifica;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_alumno_examen", nullable = false)
-    private EsctAlumnoExamen cveAlumnoExamen;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cve_pregunta", nullable = false)
-    private EsctExamenPregunta cvePregunta;
+    @ManyToOne
+    @JoinColumn(name = "cve_alumno_examen")
+    @JsonIgnore
+    private EsctAlumnoExamen esctAlumnoExamen;
+    
+    @ManyToOne
+    @JoinColumn(name = "CVE_PREGUNTA")
+    @JsonIgnore
+    private EsctExamenPregunta esctExamenPregunta;
 
 	public Integer getCveAlumnoRespuesta() {
 		return cveAlumnoRespuesta;
@@ -59,11 +62,12 @@ public class EsctAlumnoExamenResp {
 		this.cveAlumnoRespuesta = cveAlumnoRespuesta;
 	}
 
-	public Integer getRespuesta() {
+	
+	public String getRespuesta() {
 		return respuesta;
 	}
 
-	public void setRespuesta(Integer respuesta) {
+	public void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
 
@@ -115,21 +119,21 @@ public class EsctAlumnoExamenResp {
 		this.cveUsuarioModifica = cveUsuarioModifica;
 	}
 
-	public EsctAlumnoExamen getCveAlumnoExamen() {
-		return cveAlumnoExamen;
+	public EsctAlumnoExamen getEsctAlumnoExamen() {
+		return esctAlumnoExamen;
 	}
 
-	public void setCveAlumnoExamen(EsctAlumnoExamen cveAlumnoExamen) {
-		this.cveAlumnoExamen = cveAlumnoExamen;
+	public void setEsctAlumnoExamen(EsctAlumnoExamen esctAlumnoExamen) {
+		this.esctAlumnoExamen = esctAlumnoExamen;
 	}
 
-	public EsctExamenPregunta getCvePregunta() {
-		return cvePregunta;
+	public EsctExamenPregunta getEsctExamenPregunta() {
+		return esctExamenPregunta;
 	}
 
-	public void setCvePregunta(EsctExamenPregunta cvePregunta) {
-		this.cvePregunta = cvePregunta;
+	public void setEsctExamenPregunta(EsctExamenPregunta esctExamenPregunta) {
+		this.esctExamenPregunta = esctExamenPregunta;
 	}
 
-
+	
 }

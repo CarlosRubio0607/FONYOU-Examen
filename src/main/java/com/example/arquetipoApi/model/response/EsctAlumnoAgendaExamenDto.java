@@ -3,9 +3,6 @@ package com.example.arquetipoApi.model.response;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.example.arquetipoApi.persistence.entity.EsctAlumno;
-import com.example.arquetipoApi.persistence.entity.EsctExamen;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

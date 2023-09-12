@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.example.arquetipoApi.persistence.entity.EsccCiudad;
-import com.example.arquetipoApi.persistence.entity.EsctAlumnoAgendaExamen;
-import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamen;
 
 import lombok.Data;
 
@@ -30,8 +28,8 @@ public class EsctAlumnoDto implements Serializable{
 	private String cveUsuarioBaja;
 	private String cveUsuarioModifica;
 	private EsccCiudad cveCiudad;
-	private ArrayList<EsctAlumnoAgendaExamen> cveAlumnoEsctAlumnoAgendaExamens;
-	private ArrayList<EsctAlumnoExamen> cveAlumnoEsctAlumnoExamens;
+	private ArrayList<EsctAlumnoAgendaExamenDto> cveAlumnoEsctAlumnoAgendaExamens;
+	private ArrayList<EsctAlumnoExamenDto> cveAlumnoEsctAlumnoExamens;
 	
 	public Integer getCveAlumno() {
 		return cveAlumno;
@@ -105,18 +103,18 @@ public class EsctAlumnoDto implements Serializable{
 	public void setCveCiudad(EsccCiudad cveCiudad) {
 		this.cveCiudad = cveCiudad;
 	}
-	public ArrayList<EsctAlumnoAgendaExamen> getCveAlumnoEsctAlumnoAgendaExamens() {
+	public ArrayList<EsctAlumnoAgendaExamenDto> getCveAlumnoEsctAlumnoAgendaExamens() {
 		return cveAlumnoEsctAlumnoAgendaExamens;
 	}
-	public void setCveAlumnoEsctAlumnoAgendaExamens(ArrayList<EsctAlumnoAgendaExamen> cveAlumnoEsctAlumnoAgendaExamens) {
+	public void setCveAlumnoEsctAlumnoAgendaExamens(ArrayList<EsctAlumnoAgendaExamenDto> cveAlumnoEsctAlumnoAgendaExamens) {
 		this.cveAlumnoEsctAlumnoAgendaExamens = cveAlumnoEsctAlumnoAgendaExamens;
 	}
-	public ArrayList<EsctAlumnoExamen> getCveAlumnoEsctAlumnoExamens() {
+	public ArrayList<EsctAlumnoExamenDto> getCveAlumnoEsctAlumnoExamens() {
 		return cveAlumnoEsctAlumnoExamens;
 	}
-	public void setCveAlumnoEsctAlumnoExamens(ArrayList<EsctAlumnoExamen> cveAlumnoEsctAlumnoExamens) {
+	public void setCveAlumnoEsctAlumnoExamens(ArrayList<EsctAlumnoExamenDto> cveAlumnoEsctAlumnoExamens) {
 		this.cveAlumnoEsctAlumnoExamens = cveAlumnoEsctAlumnoExamens;
 	}
-	
+		
 	
 }

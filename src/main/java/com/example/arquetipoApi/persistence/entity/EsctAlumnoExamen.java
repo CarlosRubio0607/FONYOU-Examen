@@ -1,9 +1,12 @@
 package com.example.arquetipoApi.persistence.entity;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,7 +25,7 @@ public class EsctAlumnoExamen {
 
 
     @Id
-    @Column(name = "CVE_ALUMNO_EXAMEN", nullable = false, updatable = false)
+    @Column(name = "CVE_ALUMNO_EXAMEN", updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cveAlumnoExamen;
 
@@ -55,8 +58,9 @@ public class EsctAlumnoExamen {
     @JoinColumn(name = "cve_examen", nullable = false)
     private EsctExamen cveExamen;
 
-    @OneToMany(mappedBy = "cveAlumnoExamen")
-    private ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps;
+    @OneToMany(fetch = FetchType.EAGER ,mappedBy = "esctAlumnoExamen", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
+    private List<EsctAlumnoExamenResp> cveAlumnoExamenResp;
 
 	public Integer getCveAlumnoExamen() {
 		return cveAlumnoExamen;
@@ -138,12 +142,13 @@ public class EsctAlumnoExamen {
 		this.cveExamen = cveExamen;
 	}
 
-	public ArrayList<EsctAlumnoExamenResp> getCveAlumnoExamenEsctAlumnoExamenResps() {
-		return cveAlumnoExamenEsctAlumnoExamenResps;
+	public List<EsctAlumnoExamenResp> getCveAlumnoExamenResp() {
+		return cveAlumnoExamenResp;
 	}
 
-	public void setCveAlumnoExamenEsctAlumnoExamenResps(
-			ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps) {
-		this.cveAlumnoExamenEsctAlumnoExamenResps = cveAlumnoExamenEsctAlumnoExamenResps;
+	public void setCveAlumnoExamenResp(List<EsctAlumnoExamenResp> cveAlumnoExamenResp) {
+		this.cveAlumnoExamenResp = cveAlumnoExamenResp;
 	}
+
+	
 }

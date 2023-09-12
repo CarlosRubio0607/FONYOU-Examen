@@ -15,6 +15,7 @@ public class ResponseServiceDTO implements Serializable {
 	private Object respuesta;
 	private Boolean estatus;
 	private int code;
+	private String respuestaPersonalizada;
 	public String getMensaje() {
 		return mensaje;
 	}
@@ -38,6 +39,12 @@ public class ResponseServiceDTO implements Serializable {
 	}
 	public void setCode(int code) {
 		this.code = code;
+	}
+	public String getRespuestaPersonalizada() {
+		return respuestaPersonalizada;
+	}
+	public void setRespuestaPersonalizada(String respuestaPersonalizada) {
+		this.respuestaPersonalizada = respuestaPersonalizada;
 	}
 	
 	

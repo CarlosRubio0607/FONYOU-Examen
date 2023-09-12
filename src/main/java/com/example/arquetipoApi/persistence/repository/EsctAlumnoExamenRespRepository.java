@@ -6,4 +6,6 @@ import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamenResp;
 
 
 public interface EsctAlumnoExamenRespRepository extends JpaRepository<EsctAlumnoExamenResp, Integer> {
+
+	
 }

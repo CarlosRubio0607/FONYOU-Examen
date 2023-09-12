@@ -19,4 +19,7 @@ public class Constantes {
 	public static final String ERROR_DATOS_CVE_ALUMNO= "Lo sentimos, La clave del Alumno es obligatoria.";
 	public static final String ERROR_DATOS_CVE_EXAMEN= "Lo sentimos, La clave del Examen es obligatoria.";
 	
+	//MENSAJE GUARDAR RESPUESTAS EXAMEN
+	public static final String ERROR_DATOS_RESPUESTAS_EXAMEN= "Lo sentimos, Las respuestas de examen son obligatorias.";
+	
 }	

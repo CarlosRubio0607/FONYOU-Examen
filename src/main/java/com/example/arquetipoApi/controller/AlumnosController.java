@@ -30,8 +30,9 @@ public class AlumnosController {
 		return AlumnosService.getCatalogoAlumnos();
 	}
 	
-	@PostMapping("/saveAlumnos")
+	@PostMapping(value = "/saveAlumnos", consumes = {"*/*"}) 
 	public ResponseEntity<?> save(@RequestBody EsctAlumnoDto examen) {
+		logger.info("::::::::::: save de alumnos :::::::::::");
 		return AlumnosService.saveAlumnos(examen);
 
 	}

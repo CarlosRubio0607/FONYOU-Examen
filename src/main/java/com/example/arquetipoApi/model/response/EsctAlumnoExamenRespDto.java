@@ -1,15 +1,7 @@
 package com.example.arquetipoApi.model.response;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
-
-import com.example.arquetipoApi.persistence.entity.EsctAlumno;
-import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamen;
-import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamenResp;
-import com.example.arquetipoApi.persistence.entity.EsctExamen;
-import com.example.arquetipoApi.persistence.entity.EsctExamenPregunta;
 
 import lombok.Data;
 
@@ -22,25 +14,27 @@ public class EsctAlumnoExamenRespDto implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private Integer cveAlumnoRespuesta;
-	private Integer respuesta;
+	private String respuesta;
 	private Date fecAlta;
 	private Date fecBaja;
 	private Date fecModifica;
 	private String cveUsuarioAlta;
 	private String cveUsuarioBaja;
 	private String cveUsuarioModifica;
-	private EsctAlumnoExamen cveAlumnoExamen;
-	private EsctExamenPregunta cvePregunta;
+	private EsctAlumnoExamenDto cveAlumnoExamen;
+	private EsctExamenPreguntaDto esctExamenPregunta;
+	
 	public Integer getCveAlumnoRespuesta() {
 		return cveAlumnoRespuesta;
 	}
 	public void setCveAlumnoRespuesta(Integer cveAlumnoRespuesta) {
 		this.cveAlumnoRespuesta = cveAlumnoRespuesta;
 	}
-	public Integer getRespuesta() {
+	
+	public String getRespuesta() {
 		return respuesta;
 	}
-	public void setRespuesta(Integer respuesta) {
+	public void setRespuesta(String respuesta) {
 		this.respuesta = respuesta;
 	}
 	public Date getFecAlta() {
@@ -79,18 +73,20 @@ public class EsctAlumnoExamenRespDto implements Serializable{
 	public void setCveUsuarioModifica(String cveUsuarioModifica) {
 		this.cveUsuarioModifica = cveUsuarioModifica;
 	}
-	public EsctAlumnoExamen getCveAlumnoExamen() {
+	public EsctAlumnoExamenDto getCveAlumnoExamen() {
 		return cveAlumnoExamen;
 	}
-	public void setCveAlumnoExamen(EsctAlumnoExamen cveAlumnoExamen) {
+	public void setCveAlumnoExamen(EsctAlumnoExamenDto cveAlumnoExamen) {
 		this.cveAlumnoExamen = cveAlumnoExamen;
 	}
-	public EsctExamenPregunta getCvePregunta() {
-		return cvePregunta;
+	public EsctExamenPreguntaDto getEsctExamenPregunta() {
+		return esctExamenPregunta;
 	}
-	public void setCvePregunta(EsctExamenPregunta cvePregunta) {
-		this.cvePregunta = cvePregunta;
+	public void setEsctExamenPregunta(EsctExamenPreguntaDto esctExamenPregunta) {
+		this.esctExamenPregunta = esctExamenPregunta;
 	}
+	
+	
 	
 	
 }

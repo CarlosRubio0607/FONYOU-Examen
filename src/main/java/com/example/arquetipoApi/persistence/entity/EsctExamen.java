@@ -4,7 +4,7 @@ import java.time.OffsetDateTime;
 import java.util.Date;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -50,7 +50,7 @@ public class EsctExamen {
     private String cveUsuarioModifica;
 
     @OneToMany(mappedBy = "cveExamen", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
+    @JsonBackReference
     private List<EsctExamenPregunta> cveExamenEsctExamenPreguntas;
 
 	public Integer getCveExamen() {

@@ -106,9 +106,6 @@ public class EsctExamenPreguntaDto implements Serializable{
 	public void setCveUsuarioModifica(String cveUsuarioModifica) {
 		this.cveUsuarioModifica = cveUsuarioModifica;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
+
 	
 }

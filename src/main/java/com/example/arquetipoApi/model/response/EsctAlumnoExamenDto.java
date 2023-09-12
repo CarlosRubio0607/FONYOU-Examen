@@ -2,11 +2,10 @@ package com.example.arquetipoApi.model.response;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.example.arquetipoApi.persistence.entity.EsctAlumno;
-import com.example.arquetipoApi.persistence.entity.EsctAlumnoExamenResp;
 import com.example.arquetipoApi.persistence.entity.EsctExamen;
 
 import lombok.Data;
@@ -29,7 +28,9 @@ public class EsctAlumnoExamenDto implements Serializable{
 	private String cveUsuarioModifica;
 	private EsctAlumno cveAlumno;
 	private EsctExamen cveExamen;
-	private ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps;
+	
+	private List<EsctAlumnoExamenRespDto> cveAlumnoExamenResp;
+	
 	public Integer getCveAlumnoExamen() {
 		return cveAlumnoExamen;
 	}
@@ -90,12 +91,14 @@ public class EsctAlumnoExamenDto implements Serializable{
 	public void setCveExamen(EsctExamen cveExamen) {
 		this.cveExamen = cveExamen;
 	}
-	public ArrayList<EsctAlumnoExamenResp> getCveAlumnoExamenEsctAlumnoExamenResps() {
-		return cveAlumnoExamenEsctAlumnoExamenResps;
+	public List<EsctAlumnoExamenRespDto> getCveAlumnoExamenResp() {
+		return cveAlumnoExamenResp;
 	}
-	public void setCveAlumnoExamenEsctAlumnoExamenResps(
-			ArrayList<EsctAlumnoExamenResp> cveAlumnoExamenEsctAlumnoExamenResps) {
-		this.cveAlumnoExamenEsctAlumnoExamenResps = cveAlumnoExamenEsctAlumnoExamenResps;
+	public void setCveAlumnoExamenResp(List<EsctAlumnoExamenRespDto> cveAlumnoExamenResp) {
+		this.cveAlumnoExamenResp = cveAlumnoExamenResp;
 	}
+	
+
+	
 
 }
